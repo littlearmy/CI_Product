@@ -5,6 +5,11 @@
             return $this->db->get('store_area')->result_array();
 
         }
+        public function getAllBrand()
+        {
+            return $this->db->get('product_brand')->result_array();
+
+        }
         public function getAllDate()
         {
             return $this->db->get('report_product')->result_array();
