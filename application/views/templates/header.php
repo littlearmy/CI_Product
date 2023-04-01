@@ -20,7 +20,6 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
         <a class="nav-link active" aria-current="page" href="<?= base_url(); ?>">Home</a>
-        <a class="nav-link" href="<?= base_url(); ?>Product">Product</a>
         <a class="nav-link disabled">About</a>
       </div>
     </div>

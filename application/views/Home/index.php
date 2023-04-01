@@ -21,11 +21,11 @@
             </ul>
             <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Select DateFrom</button>
                 <ul class="dropdown-menu">
-                    <input type="date" name="dateFrom">
+                    <input type="date" name="dateFrom" value="2021-01-01">
                 </ul>
             <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Select DateTo</button>
                 <ul class="dropdown-menu">
-                    <input type="date" name="dateTo">
+                    <input type="date" name="dateTo" value="2021-01-05">
                 </ul>
         </div>
         <button class="btn" type="submit" value="Submit" name='View'>View</button>
@@ -41,20 +41,14 @@
                 echo"Area belum terpilih !!!";
             }
             else if(empty($_POST['dateFrom'])){
-                echo"Tanggal belum terpilih !!!";
+                $dateF = '1900-01-01';
             }
             else if(empty($_POST['dateTo'])){
-                echo"Tanggal belum terpilih !!!";
+                $dateT = '2050-12-05';
             }
             else{
-                // echo "Anda memilih;<br/><br/>";
                 $dateF = $_POST['dateFrom'];
-                $dateT = $_POST['dateTo'];
-
-
-                // var_dump($dateF."<br/>");
-                // var_dump($dateT."<br/>");
-            
+                $dateT = $_POST['dateTo'];            
                 ?>
                 <table class="table">
                 <thead>
@@ -63,14 +57,6 @@
                 <th scope="col">BRAND</th>
                         <?php
                 foreach($_POST['AreaId'] as $id){
-                    // echo $item ."<br/>";
-                    // $id['Id'] = $id;
-                    // var_dump($id['Id']);
-                    // anchor('home/getSelect/'.$id['Id']);
-                    // base_url('Product/index/'.$id['Id']);
-                    // base_url('product/index/'.$product['id']
-
-                    // $this->load->controllers('controllers/home',$id);
                     $this->db->select('area_name,compliance');
                     $this->db->from('report_product as rp');
                     $this->db->join('store as str', 'rp.store_id = str.store_id');
@@ -79,13 +65,10 @@
                     $this->db->join('product as pr', 'rp.product_id = pr.product_id');
                     $this->db->join('product_brand as br', 'pr.brand_id = br.brand_id');
                     $this->db->where(['sar.area_id' => $id]);
-                    // $this->db->where(['rp.tanggal'>= $$dateF]);
-                    // $this->db->where(['rp.tanggal'>= $$dateF]);
                     $this->db->where('rp.tanggal BETWEEN "'. date('Y-m-d', strtotime($dateF)). '" and "'. date('Y-m-d', strtotime($dateT)).'"');
                     $query = $this->db->get();
                     $results = $query->result_array();
                     $AreaName = $this->db->get_where('store_area',['area_id'=>$id])->result_array();
-                    // $data2['AreaProduct'] = $this->db->get_where('store_area',['area_id' => $item])->result_array();
                     $AreaSelect[] = $id;
                     
 
@@ -93,8 +76,6 @@
                     $sumComp[] = 0;
                     $comp = [];
                     foreach ( $results as $dataArea){
-                        // var_dump($dataArea)."</br>";
-                        // echo $dataArea['area_name']."<br/>";
                         $AreaData = $results;
                         $row++;
                         $comp[] = (int)$dataArea['compliance'];
@@ -107,16 +88,11 @@
                     echo $sumComp[$id].' ';
                     echo $total[$id].'</br>';
                     ?>
-                    <!-- <script>
-                        
-                    </script> -->
                     <?php
                     foreach ($AreaName as $Area){
                         ?>
                         <th scope="col"><?php echo $Area['area_name']?></th>
                         <script>
-                            // var area = json_encode($AreaName['area_name']);
-                            // console.log(area);
                             var area[] = <?php echo ($Area['area_name']); ?>;
                             console.log(area);
                         </script>
@@ -145,20 +121,6 @@
                     ?>
                         </tr>
                     <?php $no++; } ?>
-                    
-                    
-                    
-                    <!-- <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                    </tr>
-                    <tr>
-                    <th scope="row">3</th>
-                    <td colspan="2">Larry the Bird</td>
-                    <td>@twitter</td>
-                    </tr> -->
                 </tbody>
                 
                 </table>
@@ -167,21 +129,10 @@
 
                 <script>
                         const ctx = document.getElementById('myChart');
-                        var i = 0;
-                        var name = [];
-
-                        // for(i=0;i<length.area;i++){
-                        //     name[i] = area[i];
-                        //     console.log(name[i]);
-                        // }
-                        <?php foreach ($AreaSelect as $Area){
-                            echo $Area;
-                        } ?>
-                            
                         new Chart(ctx, {
                                     type: 'bar',
                                     data: {
-                                    labels: [<?php foreach ($AreaSelect as $Area){ echo $Area.','; } ?>],
+                                    labels: [<?php foreach ($AreaSelect as $AreaS){ foreach($AreaProduct as $Area){ $AreaId = $Area['area_id']; if($AreaS == $Area['area_id']){echo "'".$Area['area_name']."'".',';}}} ?>],
                                     datasets: [{
                                         label: 'Nilai',
                                         data: [<?php foreach ($AreaSelect as $Area){ echo $total[$Area].','; } ?>],
@@ -197,20 +148,10 @@
                                     }
                                 });
                     </script>
-                
                 <?php
 
             }
         }
-
-        // foreach($AreaSelected as $All){
-        //     echo $All['compliance'].$All['store_name']."<br/>";
-        // }
-        // foreach ( $AreaSelected as $dataArea){
-        //     echo $dataArea['area_name']."<br/>";
-        // }
-
-        
     ?>
     
 
