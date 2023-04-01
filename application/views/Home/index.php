@@ -40,12 +40,12 @@
             if(empty($_POST['AreaId'])){
                 echo"Area belum terpilih !!!";
             }
-            // else if(empty($_POST['dateFrom'])){
-            //     echo"Tanggal belum terpilih !!!";
-            // }
-            // else if(empty($_POST['dateTo'])){
-            //     echo"Tanggal belum terpilih !!!";
-            // }
+            else if(empty($_POST['dateFrom'])){
+                echo"Tanggal belum terpilih !!!";
+            }
+            else if(empty($_POST['dateTo'])){
+                echo"Tanggal belum terpilih !!!";
+            }
             else{
                 // echo "Anda memilih;<br/><br/>";
                 $dateF = $_POST['dateFrom'];
@@ -61,8 +61,7 @@
                 <tr>
                 <th scope="col">NO</th>
                 <th scope="col">BRAND</th>
-                        <?php 
-                        
+                        <?php
                 foreach($_POST['AreaId'] as $id){
                     // echo $item ."<br/>";
                     // $id['Id'] = $id;
@@ -72,7 +71,7 @@
                     // base_url('product/index/'.$product['id']
 
                     // $this->load->controllers('controllers/home',$id);
-                    $this->db->select('*');
+                    $this->db->select('area_name,compliance');
                     $this->db->from('report_product as rp');
                     $this->db->join('store as str', 'rp.store_id = str.store_id');
                     $this->db->join('store_account as sac', 'str.account_id = sac.account_id');
@@ -80,44 +79,31 @@
                     $this->db->join('product as pr', 'rp.product_id = pr.product_id');
                     $this->db->join('product_brand as br', 'pr.brand_id = br.brand_id');
                     $this->db->where(['sar.area_id' => $id]);
+                    // $this->db->where(['rp.tanggal'>= $$dateF]);
+                    // $this->db->where(['rp.tanggal'>= $$dateF]);
+                    $this->db->where('rp.tanggal BETWEEN "'. date('Y-m-d', strtotime($dateF)). '" and "'. date('Y-m-d', strtotime($dateT)).'"');
                     $query = $this->db->get();
                     $results = $query->result_array();
                     $AreaName = $this->db->get_where('store_area',['area_id'=>$id])->result_array();
                     // $data2['AreaProduct'] = $this->db->get_where('store_area',['area_id' => $item])->result_array();
-                    $row = 0;
-                    $sumComp[$id][] = 0;
-                    $comp [][]=0;
+                    $AreaSelect[] = $id;
                     
-                    foreach ( $results as $data){
+
+                    $row = 0;
+                    $sumComp[] = 0;
+                    $comp = [];
+                    foreach ( $results as $dataArea){
                         // var_dump($dataArea)."</br>";
                         // echo $dataArea['area_name']."<br/>";
-                        // $AreaData = $results;
+                        $AreaData = $results;
                         $row++;
-                        var_dump($data['brand_name'].'<======================================</br>');
-                        foreach($AllBrand as $brand){
-                            if($data['brand_id'] == $brand['brand_id']){
-                                $comp[$data['area_id']] [$brand['brand_id']] = (int)$data['compliance'] + $comp[$data['area_id']] [$brand['brand_id']]; //=> comp[1][1] = 1,0
-                            }
-                            echo 'Compliance ==--------------->'.(int)$data['compliance'].'</br>';
-                            echo 'Area Id => '.$data['area_id'].'| Brand Id => '.$brand['brand_id'].'| comp =>'.$comp[$data['area_id']] [$brand['brand_id']].'</br>';
-                        }
+                        $comp[] = (int)$dataArea['compliance'];
                         
-                        
-                       
                     }
+                    $sumComp[$id] =  array_sum($comp);
+                    echo 'ROW===>'.$row.' ';
 
-                    foreach($AllBrand as $brand){
-                        $sumComp[$id][$brand['brand_id']] =  array_sum($comp[$id]);
-                        echo '**********</br>';
-                        $total[$id][$brand['brand_id']] = $sumComp[$id][$brand['brand_id']] / $row * 100;
-                        $total[$id][$brand['brand_id']] = 0;
-                    }
-                    
-                    
-                    
-                    
-                    echo 'ROW==============================>'.$row.' ';
-                    
+                    $total[$id] = ceil($sumComp[$id] / $row * 100);
                     echo $sumComp[$id].' ';
                     echo $total[$id].'</br>';
                     ?>
@@ -131,58 +117,36 @@
                         <script>
                             // var area = json_encode($AreaName['area_name']);
                             // console.log(area);
-                            var area[] = <?php echo json_encode($Area['area_name']); ?>;
+                            var area[] = <?php echo ($Area['area_name']); ?>;
                             console.log(area);
                         </script>
                         <?php
                     }
                     ?>
-                    <script>
-                        const ctx = document.getElementById('myChart');
-                        var i = 0;
-                        var name = [];
-
-                        // for(i=0;i<length.area;i++){
-                        //     name[i] = area[i];
-                        //     console.log(name[i]);
-                        // }
-                        new Chart(ctx, {
-                                    type: 'bar',
-                                    data: {
-                                    labels: ['asd','asd2'],
-                                    datasets: [{
-                                        label: '# of Votes',
-                                        data: [12, 19, 3, 5, 2, 3],
-                                        borderWidth: 3
-                                    }]
-                                    },
-                                    options: {
-                                    scales: {
-                                        y: {
-                                        beginAtZero: true
-                                        }
-                                    }
-                                    }
-                                });
-                    </script>
-                <?php
                     
+                <?php
                 }
                 ?>
                 
+                
                 </tr>
                 </thead>
+                
                 <tbody>
-                    <?php $no=1;  foreach($AllBrand as $Brand){?>
+                        <?php $no=1;  foreach($AllBrand as $Brand){?>
                         <tr>
                         <th scope="row"><?php echo $no ?></th>
 
-                        <td><?php echo $Brand['brand_name'];  ?></td>
-                        <?php foreach($total as $tot) {?>
-                        <td><?php echo $tot; }?></td>
-                        <?php $no++; }?>
-
-                    </tr>
+                        <td><?php echo $Brand['brand_name']?></td>
+                        <?php foreach ($AreaSelect as $Area){ ?>
+                        <td><?php echo $total[$Area] ?></td>
+                        <?php
+                    }
+                    ?>
+                        </tr>
+                    <?php $no++; } ?>
+                    
+                    
                     
                     <!-- <tr>
                     <th scope="row">2</th>
@@ -196,7 +160,43 @@
                     <td>@twitter</td>
                     </tr> -->
                 </tbody>
+                
                 </table>
+
+                
+
+                <script>
+                        const ctx = document.getElementById('myChart');
+                        var i = 0;
+                        var name = [];
+
+                        // for(i=0;i<length.area;i++){
+                        //     name[i] = area[i];
+                        //     console.log(name[i]);
+                        // }
+                        <?php foreach ($AreaSelect as $Area){
+                            echo $Area;
+                        } ?>
+                            
+                        new Chart(ctx, {
+                                    type: 'bar',
+                                    data: {
+                                    labels: [<?php foreach ($AreaSelect as $Area){ echo $Area.','; } ?>],
+                                    datasets: [{
+                                        label: 'Nilai',
+                                        data: [<?php foreach ($AreaSelect as $Area){ echo $total[$Area].','; } ?>],
+                                        borderWidth: 3
+                                    }]
+                                    },
+                                    options: {
+                                    scales: {
+                                        y: {
+                                        beginAtZero: true
+                                        }
+                                    }
+                                    }
+                                });
+                    </script>
                 
                 <?php
 
