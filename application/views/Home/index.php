@@ -82,11 +82,8 @@
                         
                     }
                     $sumComp[$id] =  array_sum($comp);
-                    echo 'ROW===>'.$row.' ';
 
                     $total[$id] = ceil($sumComp[$id] / $row * 100);
-                    echo $sumComp[$id].' ';
-                    echo $total[$id].'</br>';
                     ?>
                     <?php
                     foreach ($AreaName as $Area){
@@ -115,7 +112,7 @@
 
                         <td><?php echo $Brand['brand_name']?></td>
                         <?php foreach ($AreaSelect as $Area){ ?>
-                        <td><?php echo $total[$Area] ?></td>
+                        <td><?php echo $total[$Area].' %' ?></td>
                         <?php
                     }
                     ?>
@@ -136,7 +133,7 @@
                                     datasets: [{
                                         label: 'Nilai',
                                         data: [<?php foreach ($AreaSelect as $Area){ echo $total[$Area].','; } ?>],
-                                        borderWidth: 3
+                                        borderWidth: 7
                                     }]
                                     },
                                     options: {
