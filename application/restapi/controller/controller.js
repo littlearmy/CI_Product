@@ -28,3 +28,42 @@ exports.showproduct = function(req,res){
     });
 };
 
+exports.addproduct = function(req,res){
+    var product_name = req.body.product_name;
+    var brand_id = req.body.brand_id;
+
+    connection.query('INSERT INTO product (product_name,brand_id) VALUES(?,?)',[product_name,brand_id], function(error){
+        if(error){
+            console.log(error);
+        }else {
+            response.ok("Berhasil Menambahkan Data!",res)
+        }
+    });
+};
+
+exports.updateproduct = function(req,res){
+    var product_id = req.body.product_id;
+    var product_name = req.body.product_name;
+    var brand_id = req.body.brand_id;
+
+    connection.query('UPDATE product SET product_name = ?, brand_id = ? where product_id = ?',[product_name,brand_id,product_id], function(error){
+        if(error){
+            console.log(error);
+        }else {
+            response.ok("Berhasil Mengubah Data!",res)
+        }
+    });
+};
+
+exports.deleteproduct = function(req,res){
+    var product_id = req.body.product_id;
+
+    connection.query('DELETE from product where product_id = ?',[product_id], function(error){
+        if(error){
+            console.log(error);
+        }else {
+            response.ok("Berhasil Menghapus Data!",res)
+        }
+    });
+};
+
