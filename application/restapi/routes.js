@@ -20,4 +20,22 @@ module.exports = function(app) {
     
     app.route('/deleteproduct')
         .post(jsn.deleteproduct);
+
+    app.route('/showallproductbrand')
+        .get(jsn.showallproductbrand);
+    
+    app.route('/showproductbrand/:id')
+        .get(jsn.showproductbrand);
+
+    app.route('/addproductbrand')
+        .post(jsn.addproductbrand);
+
+    app.route('/updateproductbrand')
+        .post(jsn.updateproductbrand);
+    
+    app.route('/deleteproductbrand')
+        .post(jsn.deleteproductbrand);
+
+    // app.route('/showreport')
+    //     .get(jsn.showreportproduct);
 }
