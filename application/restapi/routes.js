@@ -36,6 +36,30 @@ module.exports = function(app) {
     app.route('/deleteproductbrand')
         .post(jsn.deleteproductbrand);
 
+    app.route('/showallstore')
+        .get(jsn.showallstore);
+    
+    app.route('/showstore/:id')
+        .get(jsn.showstore);
+
+    app.route('/showstoreacc/:id')
+        .get(jsn.showstoreacc);
+
+    app.route('/showstorearea/:id')
+        .get(jsn.showstorearea);
+
+    app.route('/showstorestatus/:id')
+        .get(jsn.showstorestatus);
+
+    app.route('/addproduct')
+        .post(jsn.addproduct);
+
+    app.route('/updateproduct')
+        .post(jsn.updateproduct);
+    
+    app.route('/deleteproduct')
+        .post(jsn.deleteproduct);
+
     // app.route('/showreport')
     //     .get(jsn.showreportproduct);
 }
