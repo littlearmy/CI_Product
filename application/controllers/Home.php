@@ -15,9 +15,14 @@ class Home extends CI_Controller {
         $data['DateProduct'] = $this->Home_Model->getAllDate();
         $data['AllData'] = $this->Home_Model->getAllData();
         $data['judul'] = 'Halaman Home';
+        $data['user'] = $this->db->get_where('employee', ['id_employee' =>
+        $this->session->userdata('id_employee')])->row_array();
+        // echo 'Hello ' . $data['user']['nama'];
         $this->load->view('templates/header',$data);
-        $this->load->view('Home/index');
-        $this->load->view('templates/footer');
+        $this->load->view('templates/sidebar',$data);
+        $this->load->view('templates/topbar',$data);
+        $this->load->view('Home/index',$data);
+        $this->load->view('templates/footer',$data);
     }
 }
 
