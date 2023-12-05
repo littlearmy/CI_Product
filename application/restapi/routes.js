@@ -2,9 +2,13 @@
 
 module.exports = function(app) {
     var jsn = require('./controller/controller');
+    var auth = require('./controller/authController');
 
     app.route('/')
         .get(jsn.index);
+    
+    app.route('/login')
+        .get(auth.login);
 
     app.route('/showallproduct')
         .get(jsn.showallproduct);
