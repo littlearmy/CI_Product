@@ -1,14 +1,16 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
-<div class="d-flex flex-column">
 
-    <form method="POST" mb-5>
+
+<div class="d-flex flex-column ms-5 me-1">
+
+    <form method="POST">
         <div class="btn-group">
             
             <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Select Area
             </button>
-            <ul class="dropdown-menu">
+            <ul class="dropdown-menu me-1">
                 <?php foreach ($AreaProduct as $Area) : ?>
                     <div class="input-group mb-3">
                         <div class="input-group-text">
@@ -17,89 +19,88 @@
                     </div>
                 <?php endforeach; ?>
             </ul>
-            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Select DateFrom</button>
+            <button class="btn btn-secondary dropdown-toggle me-1" type="button" data-bs-toggle="dropdown" aria-expanded="false">Select DateFrom</button>
                 <ul class="dropdown-menu">
                     <input type="date" name="dateFrom" value="2021-01-01">
                 </ul>
-            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Select DateTo</button>
+            <button class="btn btn-secondary dropdown-toggle me-1" type="button" data-bs-toggle="dropdown" aria-expanded="false">Select DateTo</button>
                 <ul class="dropdown-menu">
                     <input type="date" name="dateTo" value="2021-01-05">
                 </ul>
                 
         </div>
-        <button class="btn" type="submit" value="Submit" name='View'>View</button>
+        <button class="btn btn-primary" type="submit" value="Submit" name='View'>View</button>
     </form>
-    </div>
-    <div class="row">
-        <div class="col-xl-7 col-lg-7">
-                            <div class="card shadow mb-4">
-                                <!-- Card Header - Dropdown -->
-                                <div
-                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Overview</h6>
-                                    <div class="dropdown no-arrow">
-                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                                        </a>
-                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-                                            aria-labelledby="dropdownMenuLink">
-                                            <div class="dropdown-header">Dropdown Header:</div>
-                                            <a class="dropdown-item" href="#">Action</a>
-                                            <a class="dropdown-item" href="#">Another action</a>
-                                            <div class="dropdown-divider"></div>
-                                            <a class="dropdown-item" href="#">Something else here</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Card Body -->
-                                <div class="card-body">
-                                    <div class="chart-area-center">
-                                        <canvas id="myChart"></canvas>
-                                    </div>
-                                </div>
-                            </div>
-        </div>
-        <div class="col-xl-5 col-lg-5">
-                            <div class="card shadow mb-4">
-                                <!-- Card Header - Dropdown -->
-                                <div
-                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Pie</h6>
-                                    <div class="dropdown no-arrow">
-                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                                        </a>
-                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-                                            aria-labelledby="dropdownMenuLink">
-                                            <div class="dropdown-header">Dropdown Header:</div>
-                                            <a class="dropdown-item" href="#">Action</a>
-                                            <a class="dropdown-item" href="#">Another action</a>
-                                            <div class="dropdown-divider"></div>
-                                            <a class="dropdown-item" href="#">Something else here</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Card Body -->
-                                <div class="card-body">
-                                    <div class="chart-pie width" >
-                                        <canvas id="myPieChart" ></canvas>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-        </div>
-    </div>
-    
-    <!-- <div >
-        <canvas id="myChart"></canvas>
-    </div> -->
 
-    <!-- Pie Chart -->
-    
-    <div class="card" mt-5>
-    <?php
+
+
+    <div class="row g-1">
+        <div class="col-xl-7 col-lg-7" >
+            <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div
+                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">Overview</h6>
+                    <div class="dropdown no-arrow">
+                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                            aria-labelledby="dropdownMenuLink">
+                            <div class="dropdown-header">Dropdown Header:</div>
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body " style="height: 400px;">
+                    <div class="chart-area-center" style="height: 370px;">
+                        <canvas id="myChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-5 col-lg-5" style="height: 100px;">
+            <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div
+                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">Pie</h6>
+                    <div class="dropdown no-arrow">
+                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                            aria-labelledby="dropdownMenuLink">
+                            <div class="dropdown-header">Dropdown Header:</div>
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body" style="height: 400px;">
+                    <div class="chart-pie" style="height: 400px;" >
+                        <canvas id="myPieChart" ></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <?php echo("Hello") ?>
+        </div>
+    </div>
+        
+
+    <div class="card ms-2 me-2">
+        <?php
         if(isset($_POST['View'])){
             if(empty($_POST['AreaId'])){
                 echo"Area belum terpilih !!!";
@@ -185,73 +186,125 @@
                 </tbody>
                 
                 </table>
+    </div>
 
                 
 
-                <script>
-                        const ctx = document.getElementById('myChart');
-                        new Chart(ctx, {
-                                    type: 'line',
-                                    data: {
-                                    labels: [<?php foreach ($AreaSelect as $AreaS){ foreach($AreaProduct as $Area){ $AreaId = $Area['area_id']; if($AreaS == $Area['area_id']){echo "'".$Area['area_name']."'".',';}}} ?>],
-                                    datasets: [{
-                                        label: 'Nilai',
-                                        data: [<?php foreach ($AreaSelect as $Area){ echo $total[$Area].','; } ?>],
-                                        lineTension: 0.3,
-                                        backgroundColor: "rgba(78, 115, 223, 0.05)",
-                                        borderColor: "rgba(78, 115, 223, 1)",
-                                        pointRadius: 3,
-                                        pointBackgroundColor: "rgba(78, 115, 223, 1)",
-                                        pointBorderColor: "rgba(78, 115, 223, 1)",
-                                        pointHoverRadius: 3,
-                                        pointHoverBackgroundColor: "rgba(78, 115, 223, 1)",
-                                        pointHoverBorderColor: "rgba(78, 115, 223, 1)",
-                                        pointHitRadius: 10,
-                                        pointBorderWidth: 2,
-                                        
-                                    }]
-                                    },
-                                    options: {
-                                    scales: {
-                                        y: {
-                                        beginAtZero: true
-                                        }
-                                    },
-                                    }
-                                });
-                    </script>
-                <script>
-                        const vtx = document.getElementById('myPieChart');
-                        new Chart(vtx, {
-                                    type: 'doughnut',
-                                    data: {
-                                    labels: [<?php foreach ($AreaSelect as $AreaS){ foreach($AreaProduct as $Area){ $AreaId = $Area['area_id']; if($AreaS == $Area['area_id']){echo "'".$Area['area_name']."'".',';}}} ?>],
-                                    datasets: [{
-                                        label: 'Nilai',
-                                        data: [<?php foreach ($AreaSelect as $Area){ echo $total[$Area].','; } ?>],
-                                        borderWidth: 3
-                                        
-                                    }]
-                                    },
-                                    options: {
-                                    scales: {
-                                        y: {
-                                        beginAtZero: true
-                                        }
-                                    },
-                                    }
-                                });
-                    </script>
-                <?php
+    <script>
+        const ctx = document.getElementById('myChart');
+        new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                    labels: [<?php foreach ($AreaSelect as $AreaS){ foreach($AreaProduct as $Area){ $AreaId = $Area['area_id']; if($AreaS == $Area['area_id']){echo "'".$Area['area_name']."'".',';}}} ?>],
+                    datasets: [{
+                        label: 'Nilai',
+                        data: [<?php foreach ($AreaSelect as $Area){ echo $total[$Area].','; } ?>],
+                        lineTension: 0.3,
+                        backgroundColor: "rgba(78, 115, 223, 0.05)",
+                        borderColor: "rgba(78, 115, 223, 1)",
+                        pointRadius: 3,
+                        pointBackgroundColor: "rgba(78, 115, 223, 1)",
+                        pointBorderColor: "rgba(78, 115, 223, 1)",
+                        pointHoverRadius: 3,
+                        pointHoverBackgroundColor: "rgba(78, 115, 223, 1)",
+                        pointHoverBorderColor: "rgba(78, 115, 223, 1)",
+                        pointHitRadius: 10,
+                        pointBorderWidth: 2,
+                        
+                    }]
+                    },
+                    options: {
+                    scales: {
+                        y: {
+                        beginAtZero: true
+                        }
+                    },
+                    }
+                });
+    </script>
 
-            }
+    <script>
+            const vtx = document.getElementById('myPieChart');
+            new Chart(vtx, {
+                        type: 'doughnut',
+                        data: {
+                        labels: [<?php foreach ($AreaSelect as $AreaS)
+                                    { foreach($AreaProduct as $Area)
+                                        { $AreaId = $Area['area_id']; 
+                                            if($AreaS == $Area['area_id'])
+                                                {echo "'".$Area['area_name']."'".',';}
+                                        }
+                                    } ?>
+                                ],
+                        datasets: [{
+                            label: 'Nilai',
+                            data: [<?php foreach ($AreaSelect as $Area){ echo $total[$Area].','; } ?>],
+                            borderWidth: 3
+                            
+                        }]
+                        },
+                        options: {
+                        scales: {
+                            y: {
+                            beginAtZero: true
+                            }
+                        },
+                        }
+                    });
+                    <?php }}?>
+    </script>
+
+
+    <div class="card shadow mt-4 ms-2 me-2" id="map" style="width: device-width; height: 600px;"></div>
+     <script>
+
+        var map = L.map('map').setView([-2.600029, 118.015776], 5);
+
+        const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(map);
+
+        <?php foreach ($AreaSelect as $AreaS)
+                { foreach($AreaProduct as $Area)
+                    { $AreaId = $Area['area_id']; 
+                        if($AreaS == $Area['area_id']){ ?>
+            var marker = L.marker([<?= $Area['coordinate'] ?>]).addTo(map)
+                .bindPopup('<b><?= $Area['area_name'] ?></b>').openPopup();
+        <?php  }}}?>
+        
+        // const circle = L.circle([51.508, -0.11], {
+        //     color: 'red',
+        //     fillColor: '#f03',
+        //     fillOpacity: 0.5,
+        //     radius: 500
+        // }).addTo(map).bindPopup('I am a circle.');
+
+        // const polygon = L.polygon([
+        //     [51.509, -0.08],
+        //     [51.503, -0.06],
+        //     [51.51, -0.047]
+        // ]).addTo(map).bindPopup('I am a polygon.');
+
+
+        // const popup = L.popup()
+        //     .setLatLng([-2.600029, 118.015776])
+        //     .setContent('I am a standalone popup.')
+        //     .openOn(map);
+
+        function onMapClick(e) {
+            popup
+                .setLatLng(e.latlng)
+                .setContent(`You clicked the map at ${e.latlng.toString()}`)
+                .openOn(map);
         }
-    ?>
-    </div>
-    <div>
-        <?= $map['html']; ?>
-    </div>
 
-</div>
+        map.on('click', onMapClick);
+     </script>
+    <!-- <div>
+    <?= $map['html']; ?>
+    </div> -->
+    </div>
+</div>    
 
     
