@@ -53,10 +53,16 @@
 <!-- Page level custom scripts -->
 <script src="<?= base_url('assets/'); ?>js/demo/chart-area-demo.js"></script>
 <script src="<?= base_url('assets/'); ?>js/demo/chart-pie-demo.js"></script>
+<script src="<?= base_url('assets/'); ?>/libs/jquery/dist/jquery.min.js"></script>
+<script src="<?= base_url('assets/'); ?>/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="<?= base_url('assets/'); ?>/js/sidebarmenu.js"></script>
+<script src="<?= base_url('assets/'); ?>/js/app.min.js"></script>
+<script src="<?= base_url('assets/'); ?>/libs/apexcharts/dist/apexcharts.min.js"></script>
+<script src="<?= base_url('assets/'); ?>/libs/simplebar/dist/simplebar.js"></script>
+<script src="<?= base_url('assets/'); ?>/js/dashboard.js"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-     crossorigin=""></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
 </body>
 

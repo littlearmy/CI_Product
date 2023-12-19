@@ -2,9 +2,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
 
 
-<div class="d-flex flex-column ms-5 me-1">
+<div class="d-flex flex-column mx-3">
 
-    <form method="POST">
+
+
+
+
+
+    <form method="POST" class="mb-4">
         <div class="btn-group">
 
             <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -83,13 +88,94 @@
                 $total[$id] = ceil($sumComp[$id] / $row * 100);
             } ?>
 
+            <div class="row cols-ls-3 mb-4">
+                <div class="card ol-xl-8 col-lg-4 mx-auto">
+                    <div class="card-body">
+                        <div class="row align-items-start">
+                            <div class="col-8">
+                                <h5 class="card-title mb-9 fw-semibold"> Monthly Earnings </h5>
+                                <h4 class="fw-semibold mb-3">$6,820</h4>
+                                <div class="d-flex align-items-center pb-1">
+                                    <span class="me-2 rounded-circle bg-light-danger round-20 d-flex align-items-center justify-content-center">
+                                        <i class="ti ti-arrow-down-right text-danger"></i>
+                                    </span>
+                                    <p class="text-dark me-1 fs-3 mb-0">+9%</p>
+                                    <p class="fs-3 mb-0">last year</p>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="d-flex justify-content-end">
+                                    <div class="text-white bg-secondary rounded-circle p-6 d-flex align-items-center justify-content-center">
+                                        <i class="ti ti-currency-dollar fs-6"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="earning"></div>
+                </div>
+
+                <div class="card ol-xl-8 col-lg-4 mx-auto">
+                    <div class="card-body">
+                        <div class="row alig n-items-start">
+                            <div class="col-8">
+                                <h5 class="card-title mb-9 fw-semibold"> Monthly Earnings </h5>
+                                <h4 class="fw-semibold mb-3">$6,820</h4>
+                                <div class="d-flex align-items-center pb-1">
+                                    <span class="me-2 rounded-circle bg-light-danger round-20 d-flex align-items-center justify-content-center">
+                                        <i class="ti ti-arrow-down-right text-danger"></i>
+                                    </span>
+                                    <p class="text-dark me-1 fs-3 mb-0">+9%</p>
+                                    <p class="fs-3 mb-0">last year</p>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="d-flex justify-content-end">
+                                    <div class="text-white bg-secondary rounded-circle p-6 d-flex align-items-center justify-content-center">
+                                        <i class="ti ti-currency-dollar fs-6"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="earning2"></div>
+                </div>
+
+                <div class="card ol-xl-8 col-lg-4 mx-auto">
+                    <div class="card-body">
+                        <div class="row alig n-items-start">
+                            <div class="col-8">
+                                <h5 class="card-title mb-9 fw-semibold"> Monthly Earnings </h5>
+                                <h4 class="fw-semibold mb-3">$6,820</h4>
+                                <div class="d-flex align-items-center pb-1">
+                                    <span class="me-2 rounded-circle bg-light-danger round-20 d-flex align-items-center justify-content-center">
+                                        <i class="ti ti-arrow-down-right text-danger"></i>
+                                    </span>
+                                    <p class="text-dark me-1 fs-3 mb-0">+9%</p>
+                                    <p class="fs-3 mb-0">last year</p>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="d-flex justify-content-end">
+                                    <div class="text-white bg-secondary rounded-circle p-6 d-flex align-items-center justify-content-center">
+                                        <i class="ti ti-currency-dollar fs-6"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="sparkline3"></div>
+                </div>
+
+            </div>
+
 
             <div class="row cols-ls-3">
                 <div class="col-xl-3 col-lg-5">
                     <div class="card shadow mb-4">
                         <!-- Card Header - Dropdown -->
                         <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                            <h6 class="m-0 font-weight-bold text-primary">Overview</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Report</h6>
                             <div class="dropdown no-arrow">
                                 <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
