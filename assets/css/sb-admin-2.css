@@ -73,6 +73,12 @@ body {
   outline: 0 !important;
 }
 
+#containercircle {
+  margin: 20px;
+  width: 200px;
+  height: 100px;
+}
+
 hr {
   box-sizing: content-box;
   height: 0;

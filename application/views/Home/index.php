@@ -88,86 +88,234 @@
                 $total[$id] = ceil($sumComp[$id] / $row * 100);
             } ?>
 
-            <div class="row cols-ls-3 mb-4">
-                <div class="card ol-xl-8 col-lg-4 mx-auto">
-                    <div class="card-body">
-                        <div class="row align-items-start">
-                            <div class="col-8">
-                                <h5 class="card-title mb-9 fw-semibold"> Monthly Earnings </h5>
-                                <h4 class="fw-semibold mb-3">$6,820</h4>
-                                <div class="d-flex align-items-center pb-1">
-                                    <span class="me-2 rounded-circle bg-light-danger round-20 d-flex align-items-center justify-content-center">
-                                        <i class="ti ti-arrow-down-right text-danger"></i>
-                                    </span>
-                                    <p class="text-dark me-1 fs-3 mb-0">+9%</p>
-                                    <p class="fs-3 mb-0">last year</p>
+
+
+
+
+            <div class="row cols-ls-3 mb-2">
+                <div class="ol-xl-8 col-lg-4 mx-auto">
+                    <div class="card shadow mb-4">
+                        <!-- Card Header - Dropdown -->
+                        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                            <h6 class="m-0 font-weight-bold text-primary">Monthly Earning</h6>
+                            <div class="dropdown no-arrow">
+                                <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
+                                    <div class="dropdown-header">Dropdown Header:</div>
+                                    <a class="dropdown-item" href="#">Action</a>
+                                    <a class="dropdown-item" href="#">Another action</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Something else here</a>
                                 </div>
                             </div>
-                            <div class="col-4">
-                                <div class="d-flex justify-content-end">
-                                    <div class="text-white bg-secondary rounded-circle p-6 d-flex align-items-center justify-content-center">
-                                        <i class="ti ti-currency-dollar fs-6"></i>
+                        </div>
+                        <div class="container mt-4 mb-3">
+                            <div class="row">
+                                <div class="col-sm text-uppercase">
+                                    MTD
+                                    <div class="container mt-2">
+                                        <div class="row">
+                                            <div class="col-sm m-0 font-weight-bold">
+                                                60%
+                                                <div class="vr"></div>
+                                            </div>
+                                            <div class="col-sm m-0 font-weight-bold">
+                                                4783
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                                    Last Month
+                                    <div class=" container mt-2">
+                                        <div class="row">
+                                            <div class="col-sm m-0 font-weight-bold">
+                                                45%
+                                                <div class="vr"></div>
+                                            </div>
+
+                                            <div class="col-sm m-0 font-weight-bold">
+                                                2374
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <!-- Card Body -->
+                        <div id="earning1"></div>
+
                     </div>
-                    <div id="earning"></div>
                 </div>
 
-                <div class="card ol-xl-8 col-lg-4 mx-auto">
-                    <div class="card-body">
-                        <div class="row alig n-items-start">
-                            <div class="col-8">
-                                <h5 class="card-title mb-9 fw-semibold"> Monthly Earnings </h5>
-                                <h4 class="fw-semibold mb-3">$6,820</h4>
-                                <div class="d-flex align-items-center pb-1">
-                                    <span class="me-2 rounded-circle bg-light-danger round-20 d-flex align-items-center justify-content-center">
-                                        <i class="ti ti-arrow-down-right text-danger"></i>
-                                    </span>
-                                    <p class="text-dark me-1 fs-3 mb-0">+9%</p>
-                                    <p class="fs-3 mb-0">last year</p>
+                <div class="ol-xl-8 col-lg-4 mx-auto">
+                    <div class="card shadow mb-4">
+                        <!-- Card Header - Dropdown -->
+                        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                            <h6 class="m-0 font-weight-bold text-primary">Brand Focus</h6>
+                            <div class="dropdown no-arrow">
+                                <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
+                                    <div class="dropdown-header">Dropdown Header:</div>
+                                    <a class="dropdown-item" href="#">Action</a>
+                                    <a class="dropdown-item" href="#">Another action</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Something else here</a>
                                 </div>
                             </div>
-                            <div class="col-4">
-                                <div class="d-flex justify-content-end">
-                                    <div class="text-white bg-secondary rounded-circle p-6 d-flex align-items-center justify-content-center">
-                                        <i class="ti ti-currency-dollar fs-6"></i>
+                        </div>
+                        <div class="container mt-4 mb-3">
+                            <div class="row">
+                                <div class="col-sm text-uppercase">
+                                    MTD
+                                    <div class="container mt-2">
+                                        <div class="row">
+                                            <div class="col-sm m-0 font-weight-bold">
+                                                60%
+                                                <div class="vr"></div>
+                                            </div>
+                                            <div class="col-sm m-0 font-weight-bold">
+                                                4783
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                                    Last Month
+                                    <div class=" container mt-2">
+                                        <div class="row">
+                                            <div class="col-sm m-0 font-weight-bold">
+                                                45%
+                                                <div class="vr"></div>
+                                            </div>
+                                            <div class="col-sm m-0 font-weight-bold">
+                                                2374
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <!-- Card Body -->
+                        <div id="earning2"></div>
+
                     </div>
-                    <div id="earning2"></div>
                 </div>
 
-                <div class="card ol-xl-8 col-lg-4 mx-auto">
-                    <div class="card-body">
-                        <div class="row alig n-items-start">
-                            <div class="col-8">
-                                <h5 class="card-title mb-9 fw-semibold"> Monthly Earnings </h5>
-                                <h4 class="fw-semibold mb-3">$6,820</h4>
-                                <div class="d-flex align-items-center pb-1">
-                                    <span class="me-2 rounded-circle bg-light-danger round-20 d-flex align-items-center justify-content-center">
-                                        <i class="ti ti-arrow-down-right text-danger"></i>
-                                    </span>
-                                    <p class="text-dark me-1 fs-3 mb-0">+9%</p>
-                                    <p class="fs-3 mb-0">last year</p>
+                <div class="ol-xl-8 col-lg-4 mx-auto">
+                    <div class="card shadow mb-4">
+                        <!-- Card Header - Dropdown -->
+                        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                            <h6 class="m-0 font-weight-bold text-primary">SOS</h6>
+                            <div class="dropdown no-arrow">
+                                <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
+                                    <div class="dropdown-header">Dropdown Header:</div>
+                                    <a class="dropdown-item" href="#">Action</a>
+                                    <a class="dropdown-item" href="#">Another action</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Something else here</a>
                                 </div>
                             </div>
-                            <div class="col-4">
-                                <div class="d-flex justify-content-end">
-                                    <div class="text-white bg-secondary rounded-circle p-6 d-flex align-items-center justify-content-center">
-                                        <i class="ti ti-currency-dollar fs-6"></i>
+                        </div>
+                        <div class="container mt-4 mb-3">
+                            <div class="row">
+                                <div class="col-sm text-uppercase">
+                                    MTD
+                                    <div class="container mt-2">
+                                        <div class="row">
+                                            <div class="col-sm m-0 font-weight-bold">
+                                                60%
+                                                <div class="vr"></div>
+                                            </div>
+                                            <div class="col-sm m-0 font-weight-bold">
+                                                4783
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                                    Last Month
+                                    <div class=" container mt-2">
+                                        <div class="row">
+                                            <div class="col-sm m-0 font-weight-bold">
+                                                45%
+                                                <div class="vr"></div>
+                                            </div>
+                                            <div class="col-sm m-0 font-weight-bold">
+                                                2374
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <!-- Card Body -->
+                        <div id="earning3"></div>
                     </div>
-                    <div id="sparkline3"></div>
                 </div>
 
             </div>
+
+            <div class="card ms-2 mb-2">
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">NO</th>
+                            <th scope="col">BRAND</th>
+
+                            <?php
+                            foreach ($AreaSelect as $AreaS) {
+                                foreach ($AreaProduct as $Area) {
+                                    $AreaId = $Area['area_id'];
+                                    if ($AreaS == $Area['area_id']) {
+                            ?>
+                                        <th scope="col"><?php echo $Area['area_name'] ?></th>
+                                        <script>
+                                            var area[] = <?php echo ($Area['area_name']); ?>;
+                                            console.log(area);
+                                        </script>
+                            <?php
+                                    }
+                                }
+                            }
+                            ?>
+
+
+
+
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <?php $no = 1;
+                        foreach ($AllBrand as $Brand) { ?>
+                            <tr>
+                                <th scope="row"><?php echo $no ?></th>
+
+                                <td><?php echo $Brand['brand_name'] ?></td>
+                                <?php foreach ($AreaSelect as $Area) { ?>
+                                    <td><?php echo $total[$Area] . ' %' ?></td>
+                                <?php
+                                }
+                                ?>
+                            </tr>
+                        <?php $no++;
+                        } ?>
+                    </tbody>
+
+                </table>
+            </div>
+
+
+
 
 
             <div class="row cols-ls-3">
@@ -316,56 +464,9 @@
             </div>
 
 
-            <div class="card ms-2 me-2">
-
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">NO</th>
-                            <th scope="col">BRAND</th>
-
-                            <?php
-                            foreach ($AreaSelect as $AreaS) {
-                                foreach ($AreaProduct as $Area) {
-                                    $AreaId = $Area['area_id'];
-                                    if ($AreaS == $Area['area_id']) {
-                            ?>
-                                        <th scope="col"><?php echo $Area['area_name'] ?></th>
-                                        <script>
-                                            var area[] = <?php echo ($Area['area_name']); ?>;
-                                            console.log(area);
-                                        </script>
-                            <?php
-                                    }
-                                }
-                            }
-                            ?>
 
 
 
-
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        <?php $no = 1;
-                        foreach ($AllBrand as $Brand) { ?>
-                            <tr>
-                                <th scope="row"><?php echo $no ?></th>
-
-                                <td><?php echo $Brand['brand_name'] ?></td>
-                                <?php foreach ($AreaSelect as $Area) { ?>
-                                    <td><?php echo $total[$Area] . ' %' ?></td>
-                                <?php
-                                }
-                                ?>
-                            </tr>
-                        <?php $no++;
-                        } ?>
-                    </tbody>
-
-                </table>
-            </div>
 
 
 

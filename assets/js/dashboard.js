@@ -164,7 +164,7 @@ $(function () {
   // =====================================
   // Earning
   // =====================================
-  var earning = {
+  var earning1 = {
     chart: {
       id: "sparkline3",
       type: "area",
@@ -180,7 +180,7 @@ $(function () {
       {
         name: "Earnings",
         color: "#49BEFF",
-        data: [25, 66, 20, 40, 12, 58, 20],
+        data: [30, 40, 20, 45, 50, 45, 60],
       },
     ],
     stroke: {
@@ -207,6 +207,98 @@ $(function () {
       },
     },
   };
-  new ApexCharts(document.querySelector("#earning"), earning).render();
+  new ApexCharts(document.querySelector("#earning1"), earning1).render();
+
+
+  var earning2 = {
+    chart: {
+      id: "sparkline3",
+      type: "area",
+      height: 60,
+      sparkline: {
+        enabled: true,
+      },
+      group: "sparklines",
+      fontFamily: "Plus Jakarta Sans', sans-serif",
+      foreColor: "#adb0bb",
+    },
+    series: [
+      {
+        name: "Earnings",
+        color: "#F22727",
+        data: [50, 70, 40, 45, 60, 70, 50],
+      },
+    ],
+    stroke: {
+      curve: "smooth",
+      width: 2,
+    },
+    fill: {
+      colors: ["#f3feff"],
+      type: "solid",
+      opacity: 0.05,
+    },
+
+    markers: {
+      size: 0,
+    },
+    tooltip: {
+      theme: "dark",
+      fixed: {
+        enabled: true,
+        position: "right",
+      },
+      x: {
+        show: false,
+      },
+    },
+  };
+  new ApexCharts(document.querySelector("#earning2"), earning2).render();
+
+
+  var earning3 = {
+    chart: {
+      id: "sparkline3",
+      type: "area",
+      height: 60,
+      sparkline: {
+        enabled: true,
+      },
+      group: "sparklines",
+      fontFamily: "Plus Jakarta Sans', sans-serif",
+      foreColor: "#adb0bb",
+    },
+    series: [
+      {
+        name: "Earnings",
+        color: "#961FCE",
+        data: [25, 66, 20, 40, 12, 58],
+      },
+    ],
+    stroke: {
+      curve: "smooth",
+      width: 2,
+    },
+    fill: {
+      colors: ["#f3feff"],
+      type: "solid",
+      opacity: 0.05,
+    },
+
+    markers: {
+      size: 0,
+    },
+    tooltip: {
+      theme: "dark",
+      fixed: {
+        enabled: true,
+        position: "right",
+      },
+      x: {
+        show: false,
+      },
+    },
+  };
+  new ApexCharts(document.querySelector("#earning3"), earning3).render();
   
 })
