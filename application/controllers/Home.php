@@ -22,10 +22,10 @@ class Home extends CI_Controller
         if (!$data['user']) {
             return redirect('auth');
         }
-        $this->load->view('templates/header', $data);
-        $this->load->view('templates/sidebar', $data);
-        $this->load->view('templates/topbar', $data);
-        $this->load->view('Home/index', $data);
-        $this->load->view('templates/footer', $data);
+        // $this->load->view('templates/header', $data);
+        // $this->load->view('templates/sidebar', $data);
+        // $this->load->view('templates/topbar', $data);
+        $this->load->view('Home/index_vue', $data);
+        // $this->load->view('templates/footer', $data);
     }
 }

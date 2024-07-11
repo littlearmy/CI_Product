@@ -1,5 +1,5 @@
 <body id="page-top">
-    
+
 
     <!-- Page Wrapper -->
     <div id="wrapper">
@@ -15,7 +15,7 @@
                 <div class="sidebar-brand-text mx-3">Little Army</div>
             </a>
 
-            
+
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
 

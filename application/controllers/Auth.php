@@ -16,7 +16,7 @@ class Auth extends CI_Controller
         $this->form_validation->set_rules('password', 'Password', 'trim|required');
         if ($this->form_validation->run() == false) {
             $data['title'] = 'Login Page';
-            $this->load->view('templates/auth_header', $data); 
+            $this->load->view('templates/auth_header', $data);
             $this->load->view("Auth/login");
             $this->load->view('templates/auth_footer');
         } else {
@@ -44,7 +44,6 @@ class Auth extends CI_Controller
                     $this->session->set_userdata($data);
                     // $this->Auth_Model->setAuth();
                     redirect('home');
-                    
                 } else {
                     $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Password Salah</div>');
                     redirect('auth');
